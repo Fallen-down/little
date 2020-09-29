@@ -20,8 +20,19 @@ vue、vue-cli、vue-router、store 模式、mint-ui、axios、vuex、webpack…�
 ## Vue + Webpack 打造 todo 应用
 
 项目文件：webpack-little
+项目技术栈：vue2、webpack
 项目启动地址：http://localhost:9000/、http://127.0.0.1:9000/、http://本机IP:9000/
+项目描述：
+目录 参考 vue cli 创建的项目
 
+个人推荐图片写法
+
+```vue
+<img alt="Vue logo" :src="require('@/assets/logo.png')">
+```
+
+参考资料：
+[vue.js-todolist](https://github.com/carrieguo/vue.js-todolist)webpack+vue搭建的 todo应用
 [webpack官网](https://webpack.js.org/)
 [webpack Mode](https://webpack.js.org/configuration/mode/)
 [Vue CLI 发展历程](https://cli.vuejs.org/guide/)
@@ -59,16 +70,7 @@ path.resolve('/foo/bar', './baz');
 // 返回: '/foo/bar/baz'
 ```
 
-### 其他
+### Vue+Webpack todo 应用 任务列表
 
-目录 参考 vue cli 创建的项目
-
-参考资料
-[vue.js-todolist](https://github.com/carrieguo/vue.js-todolist)
-
-#### 备忘录
-
-css 分离压缩
-MiniCssExtractPlugin
-图片哈希值命名
-browserslist
+- [ ] css 分离压缩
+- [ ] MiniCssExtractPlugin
