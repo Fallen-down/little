@@ -19,9 +19,6 @@ vue、vue-cli、vue-router、store 模式、mint-ui、axios、vuex、webpack…�
 
 ## Vue + Webpack 打造 todo 应用
 
-项目文件：webpack-little
-项目启动地址：http://localhost:9000/、http://127.0.0.1:9000/、http://本机IP:9000/
-
 [webpack官网](https://webpack.js.org/)
 [webpack Mode](https://webpack.js.org/configuration/mode/)
 [Vue CLI 发展历程](https://cli.vuejs.org/guide/)
