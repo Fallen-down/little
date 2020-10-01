@@ -1,6 +1,12 @@
+html,
 body {
-  color: red;
-  height: 500px;
-  width: 500px;
-  background: url('../assets/bg.jpeg');
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: url("@/assets/bg.jpeg") center/cover;
+  color: #4d4d4d;
+  font-size: 14px;
 }

@@ -10,9 +10,11 @@ const isMode = process.env.NODE_ENV;
 const config = {
   // target: 'web', // <=== 默认是 'web'，可省略
   mode: isMode,
-  entry: path.join(__dirname, "src/main.js"), // entry: "./src/main.js"
+  entry: {
+    main: path.join(__dirname, "src/main.js"), // entry: "./src/main.js"
+  },
   output: {
-    filename: "bundle[hash:8].js",
+    filename: "[name][hash:8].js",
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
@@ -54,9 +56,16 @@ const config = {
           },
           {
             loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+            },
           },
           "sass-loader",
         ],
+      },
+      {
+        test: /\.jsx?$/,
+        use: ["babel-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif|jpeg)$/i,
@@ -94,6 +103,29 @@ const config = {
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: "async",
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: "~",
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+  },
 };
 
 if (isMode == "development") {

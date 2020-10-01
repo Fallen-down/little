@@ -20,7 +20,7 @@ vue、vue-cli、vue-router、store 模式、mint-ui、axios、vuex、webpack…�
 ## Vue + Webpack 打造 todo 应用
 
 项目文件：webpack-little
-项目技术栈：vue2、webpack
+项目技术栈：vue2、webpack、jsx
 项目启动地址：http://localhost:9000/、http://127.0.0.1:9000/、http://本机IP:9000/
 项目描述：
 目录 参考 vue cli 创建的项目
@@ -74,3 +74,4 @@ path.resolve('/foo/bar', './baz');
 
 - [ ] css 分离压缩
 - [ ] MiniCssExtractPlugin
+- [ ] SplitChunks js 代码分割、公共代码单独打包例如vue等
