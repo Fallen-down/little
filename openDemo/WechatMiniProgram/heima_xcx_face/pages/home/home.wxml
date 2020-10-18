@@ -1,0 +1,32 @@
+<camera style="width: 100%; height: {{wh}}px;" device-position="{{position}}" wx:if="{{src === ''}}">
+  <cover-view class="btns-box">
+    <cover-image src="/images/icon/album.png" bindtap="choosePhoto"></cover-image>
+    <cover-image src="/images/icon/camera.png" bindtap="takePhoto"></cover-image>
+    <cover-image src="/images/icon/reverse.png" bindtap="reverse"></cover-image>
+  </cover-view>
+</camera>
+
+<view wx:else>
+  <image src="{{src}}" style="height: {{wh}}px; width: 100%; display: block;" mode="aspectFill"></image>
+  <button type="warn" class="reChoose" bindtap="reChoose">重选照片</button>
+
+  <view class="faceinfo-box" wx:if="{{faceinfo.age !== undefined}}">
+    <view class="row">
+      <text>年龄：{{faceinfo.age}}岁</text>
+      <text>性别：{{map.gender[faceinfo.gender.type]}}</text>
+    </view>
+    <view class="row">
+      <text>颜值：{{faceinfo.beauty}}分</text>
+      <text>表情：{{map.expression[faceinfo.expression.type]}}</text>
+    </view>
+    <view class="row">
+      <text>眼镜：{{map.glasses[faceinfo.glasses.type]}}</text>
+      <text>情绪：{{map.emotion[faceinfo.emotion.type]}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 测颜值分成3步骤： -->
+<!-- 1. 获取 Token -->
+<!-- 2. 组织 参数 -->
+<!-- 3. 发起请求，把参数发送到人工智能API接口 -->
