@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet">
+</head>
+<body>
+    <button type="button" id="btn" class="mui-btn mui-btn-royal">js按钮，调用android的Toast功能</button>
+    <button type="button" id="takePhoto" class="mui-btn mui-btn-royal">拍照</button>
+    <button type="button" id="getPhoto" class="mui-btn mui-btn-royal">相册</button>
+    <div id="msg"></div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $('#btn').on('click', function () {
+        console.log('我是js按钮，想要调用android的Toast功能')
+        window.ToastFunc.showToast()
+        // js 可以调用android的功能
+        window.ToastFunc.showToastParams('是真的吗')
+    })
+    $('#takePhoto').on('click', function () {
+        window.PhotoFunc.takePhoto()
+    })
+    $('#getPhoto').on('click', function () {
+        window.PhotoFunc.getPhoto()
+    })
+
+    function getData (str) {
+        $('#msg').html(str)
+    }
+    /**
+    只需要按照项目需求编写也买你，假设你的一个按钮需要调用系统的功能（部分功能需要添加权限），
+    在你的按钮事件中调用由android工程师提供的相对应的对象和其方法即可，
+    同时前端也会定义一些方法，但是前端自己不调用，android会根据webview的loadUrl方法进行调用，
+    并且传参（根据需求看）
+
+    如果把这些对象封装起来（plus），结合特定的环境（hbuilder），那么前端人员也就可以自己做混合开发的项目了
+    */
+</script>
+</html>

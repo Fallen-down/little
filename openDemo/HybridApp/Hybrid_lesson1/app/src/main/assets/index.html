@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK"/>
+    <script type="text/javascript">
+
+//Java调用JS代码无参数
+function javacalljs(){
+   document.getElementById("content").innerHTML +="<br\>java调用了js函数";
+}
+
+//Java调用JS代码有参数
+function javacalljsparam(param){
+   document.getElementById("msg").innerHTML = param;
+ //  document.getElementById("img").src=param;
+  document.getElementById("img").setAttribute("src","");
+   document.getElementById("img").setAttribute("src",param);
+}
+
+function testFunc(){
+  window.WebViewFunc.jsCallWebView();
+}
+
+</script>
+
+    <title>测试页面</title>
+</head>
+<body>
+<div align="center"><img id="img" style="width:200px ; height:200px;margin-bottom:10px;"/></div><br/>
+<p id="msg"></p>
+<button id="btn" onClick="testFunc()" value="快点击我" style="width:100%; height:40px;" >快点击我</button>
+
+<br />
+</body>
+</html>

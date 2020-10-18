@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\StudioWorkplace\ScanCodeAndroidJs\app\src\main\assets"><file name="web.html" path="E:\StudioWorkplace\ScanCodeAndroidJs\app\src\main\assets\web.html"/></source><source path="E:\StudioWorkplace\ScanCodeAndroidJs\app\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\StudioWorkplace\ScanCodeAndroidJs\app\src\debug\assets"/></dataSet></merger>
