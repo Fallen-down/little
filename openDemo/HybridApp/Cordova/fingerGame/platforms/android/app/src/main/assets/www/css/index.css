@@ -1,0 +1,248 @@
+@charset "utf-8";
+/* 初始化 */
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font: 12px/1.5 'Microsoft YaHei', '宋体', Tahoma, Arial, sans-serif;
+  color: #555;
+  background-color: #F7F7F7;
+}
+/*去除边框*/
+fieldset,
+img,
+input,
+button,
+textarea {
+  border: none;
+  /*去除的蓝色小边框*/
+  outline-style: none;
+}
+/*禁止表单域缩放*/
+textarea {
+  resize: none;
+}
+a {
+  text-decoration: none;
+  color: #969696;
+  /* 取消链接高亮  */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* 图片自适应 */
+img {
+  width: 100%;
+  /*解决图片底部对齐问题*/
+  display: block;
+  border: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 100%;
+}
+/* 废物利用 */
+em,
+i {
+  font-style: normal;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/*单行溢出*/
+.one-txt-cut {
+  overflow: hidden;
+  /* 规定段落中的文本不换行 */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*多行溢出*/
+.txt-cut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.page-start {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url("../images/bigBg.jpg") center;
+  background-size: cover;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+}
+.container .top {
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  padding: 20px 0;
+}
+.container .top .menu {
+  height: 50px;
+  line-height: 50px;
+}
+.container .top .score {
+  height: 50px;
+  line-height: 50px;
+}
+.container .hands .h_left {
+  float: left;
+  max-width: 50%;
+  transform-origin: left center;
+  margin-left: -15px;
+}
+.container .hands .h_left.current {
+  animation: left_hands .2s infinite;
+}
+.container .hands .h_right {
+  float: right;
+  max-width: 50%;
+  margin-right: -15px;
+  transform-origin: right center;
+}
+.container .hands .h_right.current {
+  animation: right_hands .2s infinite;
+}
+.container .btns {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.container .btns > div {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  line-height: 90px;
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+}
+.container .btns .left {
+  background-image: linear-gradient(135deg, #f98554, #ffe099);
+}
+.container .btns .center {
+  background-image: linear-gradient(to bottom, #fbd1a0, #c3d3c7);
+}
+.container .btns .right {
+  background-image: linear-gradient(225deg, #7dc2c0, #c9d8bd);
+}
+.resultModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.resultModal .content {
+  width: 300px;
+  margin: 100px auto;
+  background-color: #fff;
+  border-radius: 20px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  padding: 30px 0;
+}
+.resultModal .content button {
+  width: 240px;
+  height: 50px;
+  margin-top: 20px;
+  background-color: #FFE400;
+  color: #912800;
+  font-size: 25px;
+  border-radius: 20px;
+}
+@keyframes left_hands {
+  from {
+    transform: rotate(-40deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+@keyframes right_hands {
+  from {
+    transform: rotate(40deg);
+  }
+  to {
+    transform: rotate(-5deg);
+  }
+}

@@ -1,0 +1,153 @@
+// 进行样式初始化
+@import "base";
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+// 起始页
+.page-start {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url("../images/bigBg.jpg") center;
+  background-size: cover;
+  // display: none;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+
+  .top {
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    padding: 20px 0;
+
+    .menu {
+      height: 50px;
+      line-height: 50px;
+    }
+    .score {
+      height: 50px;
+      line-height: 50px;
+    }
+  }
+
+  .hands {
+
+    .h_left {
+      float: left;
+      max-width: 50%;
+      // 设置变换基准点
+      transform-origin: left center;
+      margin-left: -15px;
+
+      &.current {
+        // animation: 动画名称  动画时间  动画次数
+        animation: left_hands .2s infinite;
+      }
+    }
+
+    .h_right {  
+      float: right;
+      max-width: 50%;
+      margin-right: -15px;
+      transform-origin: right center;
+
+      &.current {
+        animation: right_hands .2s infinite;
+      }
+    }
+  }
+
+  .btns {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    // 控制水平方向的对齐方式
+    justify-content: space-around;
+
+    > div {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      line-height: 90px;
+      text-align: center;
+      color: #fff;
+      font-size: 30px;
+    }
+
+    .left {
+      background-image: linear-gradient(135deg, #f98554, #ffe099);
+    }
+    .center {
+      background-image: linear-gradient(to bottom, #fbd1a0, #c3d3c7);
+    }
+    .right {
+      background-image: linear-gradient(225deg, #7dc2c0, #c9d8bd);
+    }
+
+  }
+}
+
+.resultModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+
+  .content {
+    width: 300px;
+    margin: 100px auto;
+    background-color: #fff;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    padding: 30px 0;
+
+    button {
+      width: 240px;
+      height: 50px;
+      margin-top: 20px;
+      background-color: #FFE400;
+      color: #912800;
+      font-size: 25px;
+      border-radius: 20px;
+    }
+  }
+}
+
+
+// 定义左手的动画效果
+@keyframes left_hands {
+  from {
+    transform: rotate(-40deg)
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+// 定义右手的动画效果
+@keyframes right_hands {
+  from {
+    transform: rotate(40deg)
+  }
+  to {
+    transform: rotate(-5deg);
+  }
+}

@@ -1,0 +1,28 @@
+/* pages/shoplist/shoplist.wxss */
+
+.shop-item {
+  display: flex;
+  padding: 5px;
+}
+
+.shop-item + .shop-item {
+  border-top: 1px solid #eee;
+}
+
+.shop-item  .left image{
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin-right: 5px;
+}
+
+.shop-item .right{
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.shop-item .right text:nth-child(1) {
+  font-weight: bold;
+}
